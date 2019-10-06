@@ -9,19 +9,11 @@ If fso.DriveExists("S:" ) Then
 End if
 
 ' Mapping du lecteur réseau
-Dim strRemoteShare , strUser, strPassword
+Dim strRemoteShare, strUser, strPassword
 
-strUser = "demo" ' Utilisateur
-strPassword = "demo" ' Mot de passe
-strRemoteShare = "\\server\users" ' Chemin réseau (exemple)
+strUser = InputBox("Nom d'utilisateur") ' Utilisateur
+strPassword = InputBox("Mot de passe") ' Mot de passe
+strRemoteShare = "\\server" ' Chemin réseau (exemple)
 
 WshNetwork.MapNetworkDrive "S:", strRemoteShare, false, strUser, strPassword
 ' Fin mapping du lecteur réseau
-
-' Message de succès
-'WScript.Echo user & ", votre lecteur reseau est mappe."
-
-' Message d'erreur
-'WScript.Echo "Echec du mapping du lecteur reseau."
-
-WScript.Quit
